@@ -80,7 +80,11 @@ struct LibraryScreen: View {
             let empty = HomeShelf(title: playlistsTitle, items: [])
             playlistShelf(empty, pinned: pinned)
         }
-        ForEach(Array(page.shelves.enumerated()), id: \.element.title) { _, shelf in
+        // The "Hide Artists" setting drops the Artists shelf (YTMusicRepository.artistsShelfTitle).
+        let shelves = settings.hideLibraryArtists
+            ? page.shelves.filter { $0.title != YTMusicRepository.artistsShelfTitle }
+            : page.shelves
+        ForEach(Array(shelves.enumerated()), id: \.element.title) { _, shelf in
             if shelf.title == playlistsTitle {
                 playlistShelf(shelf.pinnedFirst(pinned), pinned: pinned)
             } else {

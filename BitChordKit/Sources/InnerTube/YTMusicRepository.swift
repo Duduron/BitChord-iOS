@@ -364,11 +364,13 @@ public final class YTMusicRepository: Sendable {
     /// What the playlists shelf is called in a ``LibraryPage`` — the one shelf anything else looks for
     /// by name (the create tile leads it; rename and delete reach into it).
     public static let playlistsShelfTitle = "Playlists"
+    /// The Library's Artists shelf, which the "Hide Artists" setting removes.
+    public static let artistsShelfTitle = "Artists"
     /// Library shelves in display order.
     public static let libraryFeeds: [(title: String, browseId: String)] = [
         (playlistsShelfTitle, libraryPlaylistsBrowseId),
         ("Albums", "FEmusic_liked_albums"),
-        ("Artists", "FEmusic_library_corpus_track_artists"),
+        (artistsShelfTitle, "FEmusic_library_corpus_track_artists"),
         ("Subscriptions", "FEmusic_library_corpus_artists"),
         ("Podcasts", "FEmusic_library_non_music_audio_list"),
     ]

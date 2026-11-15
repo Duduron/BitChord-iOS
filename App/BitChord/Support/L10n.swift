@@ -576,6 +576,10 @@ enum L10n {
     static var hideSongStatus: String { tr("hide_song_status") }
     /// Hides the “Playing from” or “Played by” text in the main player
     static var hideSongStatusSubtitle: String { tr("hide_song_status_subtitle") }
+    /// Hide Artists in Library
+    static var hideLibraryArtists: String { tr("hide_library_artists") }
+    /// Hides the Artists row on the Library tab
+    static var hideLibraryArtistsSubtitle: String { tr("hide_library_artists_subtitle") }
     /// Hide volume bar
     static var hideVolumeBar: String { tr("hide_volume_bar") }
     /// Removes the volume slider from the main player

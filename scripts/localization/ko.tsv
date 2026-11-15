@@ -205,6 +205,8 @@ hebrew	히브리어
 hi_res_lossless	고해상도 무손실
 hide_song_status	재생 출처 숨기기
 hide_song_status_subtitle	플레이어 위쪽의 재생 출처 설명을 숨깁니다
+hide_library_artists	보관함에서 아티스트 숨기기
+hide_library_artists_subtitle	보관함 탭의 아티스트 목록을 숨깁니다
 hide_volume_bar	음량 막대 숨기기
 hide_volume_bar_subtitle	플레이어의 음량 조절 막대를 숨깁니다
 keep_diagnostic_log	진단 기록 저장

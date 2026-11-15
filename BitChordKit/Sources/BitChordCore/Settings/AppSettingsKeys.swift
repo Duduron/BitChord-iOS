@@ -58,6 +58,7 @@ extension AppSettings {
         case hideVolumeBar = "hide_volume_bar"
         case showQueueHistory = "show_queue_history"
         case hideSongStatus = "hide_song_status"
+        case hideLibraryArtists = "hide_library_artists"
         case showLyricsProvider = "show_lyrics_provider"
         case lyricsTypography = "lyrics_typography"
         case fullBleedArtwork = "full_bleed_artwork"

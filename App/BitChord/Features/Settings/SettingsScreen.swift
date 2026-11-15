@@ -379,6 +379,9 @@ struct SettingsScreen: View {
         case .hideSongStatus:
             SettingsToggleRow(symbol: "eye.slash", title: L10n.hideSongStatus,
                               subtitle: L10n.hideSongStatusSubtitle, isOn: $settings.hideSongStatus)
+        case .hideLibraryArtists:
+            SettingsToggleRow(symbol: "person.crop.circle.badge.xmark", title: L10n.hideLibraryArtists,
+                              subtitle: L10n.hideLibraryArtistsSubtitle, isOn: $settings.hideLibraryArtists)
 
         case .appLanguage:
             SettingsRow(symbol: "globe", title: L10n.appLanguage, subtitle: AppLanguage.current().name()) {

@@ -335,6 +335,11 @@ public final class AppSettings {
         didSet { write(.hideSongStatus, hideSongStatus) }
     }
 
+    /// Hides the Artists shelf on the Library tab.
+    public var hideLibraryArtists: Bool = false {
+        didSet { write(.hideLibraryArtists, hideLibraryArtists) }
+    }
+
     /// Shows the lyrics provider caption and inline provider-change button.
     public var showLyricsProvider: Bool = false {
         didSet { write(.showLyricsProvider, showLyricsProvider) }
@@ -980,6 +985,7 @@ public final class AppSettings {
         hideVolumeBar = readBool(.hideVolumeBar, default: false)
         showQueueHistory = readBool(.showQueueHistory, default: false)
         hideSongStatus = readBool(.hideSongStatus, default: false)
+        hideLibraryArtists = readBool(.hideLibraryArtists, default: false)
         showLyricsProvider = readBool(.showLyricsProvider, default: false)
         lyricsTypography = .restore(readString(.lyricsTypography) ?? "")
         fullBleedArtwork = readBool(.fullBleedArtwork, default: true)

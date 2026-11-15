@@ -31405,6 +31405,20 @@
         }
       }
     },
+    "hide_library_artists" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hide Artists in Library" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "보관함에서 아티스트 숨기기" } }
+      }
+    },
+    "hide_library_artists_subtitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hides the Artists row on the Library tab" } },
+        "ko" : { "stringUnit" : { "state" : "translated", "value" : "보관함 탭의 아티스트 목록을 숨깁니다" } }
+      }
+    },
     "hide_song_status" : {
       "extractionState" : "manual",
       "localizations" : {

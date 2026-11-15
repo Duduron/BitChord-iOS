@@ -80,10 +80,12 @@ struct LibraryScreen: View {
             let empty = HomeShelf(title: playlistsTitle, items: [])
             playlistShelf(empty, pinned: pinned)
         }
-        // The "Hide Artists" setting drops the Artists shelf (YTMusicRepository.artistsShelfTitle).
-        let shelves = settings.hideLibraryArtists
-            ? page.shelves.filter { $0.title != YTMusicRepository.artistsShelfTitle }
-            : page.shelves
+        // The "Hide …" settings drop the Artists, Subscriptions and Podcasts shelves.
+        var hidden: Set<String> = []
+        if settings.hideLibraryArtists { hidden.insert(YTMusicRepository.artistsShelfTitle) }
+        if settings.hideLibrarySubscriptions { hidden.insert(YTMusicRepository.subscriptionsShelfTitle) }
+        if settings.hideLibraryPodcasts { hidden.insert(YTMusicRepository.podcastsShelfTitle) }
+        let shelves = page.shelves.filter { !hidden.contains($0.title) }
         ForEach(Array(shelves.enumerated()), id: \.element.title) { _, shelf in
             if shelf.title == playlistsTitle {
                 playlistShelf(shelf.pinnedFirst(pinned), pinned: pinned)

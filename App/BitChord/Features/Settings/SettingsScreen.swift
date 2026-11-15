@@ -382,6 +382,12 @@ struct SettingsScreen: View {
         case .hideLibraryArtists:
             SettingsToggleRow(symbol: "person.crop.circle.badge.xmark", title: L10n.hideLibraryArtists,
                               subtitle: L10n.hideLibraryArtistsSubtitle, isOn: $settings.hideLibraryArtists)
+        case .hideLibrarySubscriptions:
+            SettingsToggleRow(symbol: "person.crop.circle.badge.xmark", title: L10n.hideLibrarySubscriptions,
+                              subtitle: L10n.hideLibrarySubscriptionsSubtitle, isOn: $settings.hideLibrarySubscriptions)
+        case .hideLibraryPodcasts:
+            SettingsToggleRow(symbol: "mic.slash", title: L10n.hideLibraryPodcasts,
+                              subtitle: L10n.hideLibraryPodcastsSubtitle, isOn: $settings.hideLibraryPodcasts)
 
         case .appLanguage:
             SettingsRow(symbol: "globe", title: L10n.appLanguage, subtitle: AppLanguage.current().name()) {

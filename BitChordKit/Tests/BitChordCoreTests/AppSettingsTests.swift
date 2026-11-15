@@ -66,6 +66,8 @@ final class AppSettingsTests: XCTestCase {
         XCTAssertFalse(s.showQueueHistory)
         XCTAssertFalse(s.hideSongStatus)
         XCTAssertFalse(s.hideLibraryArtists)
+        XCTAssertFalse(s.hideLibrarySubscriptions)
+        XCTAssertFalse(s.hideLibraryPodcasts)
         XCTAssertTrue(s.fullBleedArtwork)
         XCTAssertFalse(s.legacyMeshGradient)
         XCTAssertEqual(s.lastPlayerScreen, .main)
@@ -163,6 +165,8 @@ final class AppSettingsTests: XCTestCase {
         s.showQueueHistory = true
         s.hideSongStatus = true
         s.hideLibraryArtists = true
+        s.hideLibrarySubscriptions = true
+        s.hideLibraryPodcasts = true
         s.fullBleedArtwork = false
         s.legacyMeshGradient = true
         s.lastPlayerScreen = .lyrics
@@ -258,6 +262,8 @@ final class AppSettingsTests: XCTestCase {
         XCTAssertTrue(r.showQueueHistory)
         XCTAssertTrue(r.hideSongStatus)
         XCTAssertTrue(r.hideLibraryArtists)
+        XCTAssertTrue(r.hideLibrarySubscriptions)
+        XCTAssertTrue(r.hideLibraryPodcasts)
         XCTAssertFalse(r.fullBleedArtwork)
         XCTAssertTrue(r.legacyMeshGradient)
         XCTAssertEqual(r.lastPlayerScreen, .lyrics)

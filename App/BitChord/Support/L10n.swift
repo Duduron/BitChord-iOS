@@ -580,6 +580,14 @@ enum L10n {
     static var hideLibraryArtists: String { tr("hide_library_artists") }
     /// Hides the Artists row on the Library tab
     static var hideLibraryArtistsSubtitle: String { tr("hide_library_artists_subtitle") }
+    /// Hide Subscriptions in Library
+    static var hideLibrarySubscriptions: String { tr("hide_library_subscriptions") }
+    /// Hides the Subscriptions row on the Library tab
+    static var hideLibrarySubscriptionsSubtitle: String { tr("hide_library_subscriptions_subtitle") }
+    /// Hide Podcasts in Library
+    static var hideLibraryPodcasts: String { tr("hide_library_podcasts") }
+    /// Hides the Podcasts row on the Library tab
+    static var hideLibraryPodcastsSubtitle: String { tr("hide_library_podcasts_subtitle") }
     /// Hide volume bar
     static var hideVolumeBar: String { tr("hide_volume_bar") }
     /// Removes the volume slider from the main player

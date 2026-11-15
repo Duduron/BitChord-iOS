@@ -366,13 +366,17 @@ public final class YTMusicRepository: Sendable {
     public static let playlistsShelfTitle = "Playlists"
     /// The Library's Artists shelf, which the "Hide Artists" setting removes.
     public static let artistsShelfTitle = "Artists"
+    /// The Library's Subscriptions shelf, which the "Hide Subscriptions" setting removes.
+    public static let subscriptionsShelfTitle = "Subscriptions"
+    /// The Library's Podcasts shelf, which the "Hide Podcasts" setting removes.
+    public static let podcastsShelfTitle = "Podcasts"
     /// Library shelves in display order.
     public static let libraryFeeds: [(title: String, browseId: String)] = [
         (playlistsShelfTitle, libraryPlaylistsBrowseId),
         ("Albums", "FEmusic_liked_albums"),
         (artistsShelfTitle, "FEmusic_library_corpus_track_artists"),
-        ("Subscriptions", "FEmusic_library_corpus_artists"),
-        ("Podcasts", "FEmusic_library_non_music_audio_list"),
+        (subscriptionsShelfTitle, "FEmusic_library_corpus_artists"),
+        (podcastsShelfTitle, "FEmusic_library_non_music_audio_list"),
     ]
     /// A runaway feed can't hold a background load open forever.
     public static let maxPages = 10

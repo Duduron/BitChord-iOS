@@ -70,6 +70,16 @@ struct LibraryScreen: View {
         .accessibilityIdentifier("screen.library")
     }
 
+    /// Shelves the "Hide …" settings drop: Artists, Subscriptions and Podcasts. Kept out of the
+    /// `@ViewBuilder` below, where a bare `insert` call would be read as a view.
+    private var hiddenShelfTitles: Set<String> {
+        var hidden: Set<String> = []
+        if settings.hideLibraryArtists { hidden.insert(YTMusicRepository.artistsShelfTitle) }
+        if settings.hideLibrarySubscriptions { hidden.insert(YTMusicRepository.subscriptionsShelfTitle) }
+        if settings.hideLibraryPodcasts { hidden.insert(YTMusicRepository.podcastsShelfTitle) }
+        return hidden
+    }
+
     @ViewBuilder
     private func accountShelves(_ page: LibraryPage) -> some View {
         let pinned = settings.pinnedPlaylists
@@ -80,11 +90,7 @@ struct LibraryScreen: View {
             let empty = HomeShelf(title: playlistsTitle, items: [])
             playlistShelf(empty, pinned: pinned)
         }
-        // The "Hide …" settings drop the Artists, Subscriptions and Podcasts shelves.
-        var hidden: Set<String> = []
-        if settings.hideLibraryArtists { hidden.insert(YTMusicRepository.artistsShelfTitle) }
-        if settings.hideLibrarySubscriptions { hidden.insert(YTMusicRepository.subscriptionsShelfTitle) }
-        if settings.hideLibraryPodcasts { hidden.insert(YTMusicRepository.podcastsShelfTitle) }
+        let hidden = hiddenShelfTitles
         let shelves = page.shelves.filter { !hidden.contains($0.title) }
         ForEach(Array(shelves.enumerated()), id: \.element.title) { _, shelf in
             if shelf.title == playlistsTitle {
